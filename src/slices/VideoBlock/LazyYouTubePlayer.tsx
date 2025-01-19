@@ -4,13 +4,13 @@ import { KeyTextField } from "@prismicio/client";
 import { useEffect, useRef, useState } from "react";
 
 type VideoProps = {
-  youTubeID: KeyTextField;
+  youTubeID?: KeyTextField;
 };
 
 export function LazyYouTubePlayer({ youTubeID }: VideoProps) {
   const [isInView, setIsInView] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-
+  console.log(youTubeID);
   useEffect(() => {
     const currentContainerRef = containerRef.current;
 
